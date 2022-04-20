@@ -1,25 +1,26 @@
 # Apartment Manager
 
 <p>
-  It is an web application that allows respective manager of an apartment to add, view & update flats' details & residents' details. 
+  It is a Full MERN Stack Apartment App, Where the Manager can add and edit the apartment and otherdetails, include sorting and filtering Property. 
 <p/>
 
 ---
+
 # Welcome :wave:
+
 ---
 
 # Live Demo:
 
-https://apartment-manager-frontend-hazel.vercel.app/
+https://apartment-frontend.vercel.app/
 
 ---
 
 ### About this project: :raised_hands:
 
-> It is a solo project executed in 1 day as a side project of mine. It is an web application that allows respective manager of an apartment to add, view & update flats' details & residents' details. 
+> It is a solo project executed in 1 day as a side project of mine in Masai School. It has features like CRUD operations and sorting, filtering, pagination, user authentication, and many more. 
 
 ---
-
 
 ### Pages & Features :point_down:
 
@@ -34,7 +35,7 @@ https://apartment-manager-frontend-hazel.vercel.app/
 
 ### How To Use ✅
 
-User is required to signup first. On successful login, he is directed to main page where flats' details are displayed with option of editing flats' details, viewing residents of selected flat & adding new residents to it. User can filter by resident type, sort by flat number & search by block name. Flats' details are shown in different pages (pagination). Finally he can logout.   
+User is required to signup first. On successful login, he is directed to main page where flats' details are displayed with option of editing flats' details, viewing residents of selected flat & adding new residents to it. User can filter by resident type, sort by flat number & search by block name. Flats' details are shown in different pages (pagination). Finally he can logout.
 
 ---
 
@@ -49,26 +50,3 @@ User is required to signup first. On successful login, he is directed to main pa
 - `Express JS`
 
 ---
-
-### Screenshots:
-<hr/>
-
-## Log In Page
-
-![Log In](https://user-images.githubusercontent.com/92107053/164013383-918709b0-53fe-42c3-81d5-4a5e3b8bb00c.png)
-
-## Home_Page
-
-![Main Page](https://user-images.githubusercontent.com/92107053/164013404-ca29a4f2-5a0b-4416-83b5-8f1d266e18f6.png)
-
-## Add Flat Page
-
-![Add Flat Page](https://user-images.githubusercontent.com/92107053/164013262-b32a6cb3-9ef2-4a92-bd3e-97b62d01e662.png)
-
-## Edit Flat Page
-
-![Edit Flat Page](https://user-images.githubusercontent.com/92107053/164013290-fd996480-7b1b-4b5a-806f-34d053dbe79c.png)
-
-## Residents Page
-![Residents Page](https://user-images.githubusercontent.com/92107053/164013419-858d691b-5537-4ccb-b236-f773e53b1b4f.png)
-
