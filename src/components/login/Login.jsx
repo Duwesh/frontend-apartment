@@ -48,7 +48,7 @@ export default function Login() {
 
   return (
     <div
-      style={{ paddingTop: "10px", backgroundColor: "black", height: "700px" }}
+      style={{ paddingTop: "10px", backgroundColor: "black", height: "700px", display: "flex"}}
     >
       <form
         onSubmit={(e) => {

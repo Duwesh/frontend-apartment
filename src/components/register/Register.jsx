@@ -50,10 +50,10 @@ export default function Register() {
 
   return (
     <div
-      style={{ paddingTop: "10px", backgroundColor: "black", height: "700px" }}
+      style={{ paddingTop: "10px", backgroundColor: "black", height: "700px", display: "flex"}}
     >
       <form onSubmit={handleSubmit} id="formRegister">
-        <Typography variant="h4">Sign Up</Typography>
+        <Typography variant="h4" style={{textAlign: "center", color: "white"}}>Sign Up</Typography>
         <input
           type="text"
           id="name"
