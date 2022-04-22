@@ -54,7 +54,9 @@ export default function EditFlat() {
           updateFlat();
         }}
       >
-        <Typography variant="h6" className="head">Flat Update</Typography>
+        <Typography variant="h6" className="head">
+          Flat Update
+        </Typography>
         <select
           id="flat_type"
           className="newFlat"
@@ -71,7 +73,7 @@ export default function EditFlat() {
           id="block"
           className="newFlat"
           placeholder="Enter Your Block..."
-          value={detail.block}
+          value={detail.block_name}
           onChange={handleChange}
         />
 
@@ -89,7 +91,7 @@ export default function EditFlat() {
           id="residents_count"
           className="newFlat"
           placeholder="Enter Total Residents..."
-          value={detail.residents_count}
+          value={detail.total_resident}
           onChange={handleChange}
         />
         <Button
