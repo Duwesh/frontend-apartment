@@ -51,7 +51,7 @@ export default function Register() {
         <input
           type="text"
           id="name"
-          className="register_entry"
+          className="newRegister"
           value={register.name}
           placeholder="enter name"
           onChange={handleChange}
@@ -60,7 +60,7 @@ export default function Register() {
         <input
           type="email"
           id="email"
-          className="register_entry"
+          className="newRegister"
           value={register.email}
           placeholder="enter email"
           onChange={handleChange}
@@ -69,13 +69,13 @@ export default function Register() {
         <input
           type="password"
           id="password"
-          className="register_entry"
+          className="newRegister"
           value={register.password}
           placeholder="enter password"
           onChange={handleChange}
         />
 
-        <input type="submit" value="Sign Up" className="register_entry" />
+        <input type="submit" value="Sign Up" className="newRegister" />
       </form>
     </div>
   );

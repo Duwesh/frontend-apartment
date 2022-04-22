@@ -1,17 +1,23 @@
-#addFlat_container{
-    border: 2px solid black;
+#flat_container{
     border-radius: 5px;
-    width: 30%;
+    width: 40%;
     margin: 0% auto;
     padding: 1rem 1rem 2.3rem;
 }
 
-#addFlat_container > form{
+#flat_container > form{
     display: flex;
     flex-direction: column;
-    gap: 1.3rem;
+    gap: 1rem;
 }
 
-.addFlat_entry{
-    padding: 0.5rem 1rem;
+.newFlat{
+    padding: 5px 10px;
+}
+
+.head{
+    text-align: center;
+    font-weight: 700;
+    /* margin: auto; */
+    /* place-items: center; */
 }

@@ -1,40 +1,49 @@
-#resident_container{
-    display: flex;
-    /* border: 1px solid red; */
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2rem;
+#container {
+  display: flex;
+  /* border: 1px solid red; */
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
 }
 
-#resident_container > *{
-    width: 30%;
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 1rem 1rem 2rem;
+#container > * {
+  width: 30%;
+  border-radius: 5px;
+  padding: 1rem 1rem 2rem;
 }
 
-div.showResidents > table{
-    width: 100%;
-    text-align: center;
-    /* border: 1px solid red; */
-    border-spacing: 0;
+div.showResidents > table {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  border: 2px solid black;
+  border-spacing: 2;
+  background-color: rgb(27, 152, 177);
 }
 
-div.showResidents > table > tbody > tr:nth-child(odd){
-    background: pink;
+div.showResidents > table > tbody > tr:nth-child(odd) {
+  background: rgb(27, 152, 177);
 }
 
-/* -------------------------------------- */
-#addResident_form{
-    display: flex;
-    flex-direction: column;
-    gap: 1.3rem;
+div.showResidents > table > tbody > tr:nth-child(even) {
+  background: rgb(27, 95, 177);
 }
 
-.addResident_entry{
-    padding: 0.5rem 1rem;
+table#showResidents th, table#showResidents td{
+    padding: 5px;
 }
 
-#resident_container h2{
-    text-align: center;    
+#residentForm {
+  background-color: purple;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.newResident {
+  padding: 0.5rem 1rem;
+}
+
+#container h2 {
+  text-align: center;
 }

@@ -1,7 +1,7 @@
 import "./Residents.css";
 import { useState, useEffect } from "react";
 import { Stack, Button } from "@mui/material";
-
+import { Typography } from "@mui/material";
 import { BACKEND_URL } from "../../App";
 
 export default function Residents() {
@@ -64,10 +64,12 @@ export default function Residents() {
   }
 
   return (
-    <div id="resident_container" style={{ marginTop: "10px" }}>
+    <div id="container" style={{ marginTop: "10px" }}>
       {/* showing residents details */}
       <div className="showResidents">
-        <h2>Resident Details</h2>
+        <Typography variant="h6" className="head">
+          Resident Details
+        </Typography>
         <table>
           <thead>
             <tr>
@@ -93,7 +95,7 @@ export default function Residents() {
       {/* option to add resident to selected flat */}
       <form
         onSubmit={handleSubmit}
-        id="addResident_form"
+        id="residentForm"
         // style={{ marginTop: "5px" }}
       >
         <h2>Add Resident to this flat</h2>
@@ -101,7 +103,7 @@ export default function Residents() {
         <input
           type="text"
           id="name"
-          className="addResident_entry"
+          className="newResident"
           value={residentDetail.name}
           placeholder="enter resident name"
           onChange={handleChange}
@@ -110,7 +112,7 @@ export default function Residents() {
         <input
           type="number"
           id="age"
-          className="addResident_entry"
+          className="newResident"
           value={residentDetail.age}
           placeholder="enter resident age"
           onChange={handleChange}
@@ -118,7 +120,7 @@ export default function Residents() {
 
         <select
           id="gender"
-          className="addResident_entry"
+          className="newResident"
           value={residentDetail.gender}
           onChange={handleChange}
         >
@@ -129,7 +131,7 @@ export default function Residents() {
         {/* 
         <input
           type="submit"
-          className="addResident_entry"
+          className="newResident"
           value="Add Resident"
         /> */}
         <Button onClick={(e) => handleSubmit(e)} variant="contained">

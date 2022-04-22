@@ -1,7 +1,7 @@
 import "./AddFlat.css";
 import { useState } from "react";
 import { Stack, Button } from "@mui/material";
-
+import { Typography } from "@mui/material";
 import { BACKEND_URL } from "../../App";
 
 export default function AddFlat() {
@@ -38,17 +38,22 @@ export default function AddFlat() {
   }
 
   return (
-    <div id="addFlat_container" style={{marginTop: "10px", backgroundColor: "purple"}}>
+    <div
+      id="flatContainer"
+      style={{ marginTop: "10px", backgroundColor: "purple" }}
+    >
       <form
         onSubmit={(e) => {
           e.preventDefault();
           saveFlat();
         }}
       >
-        <h2>Add flat</h2>
+        <Typography variant="h6" className="head">
+          Add Flat
+        </Typography>
         <select
           id="flat_type"
-          className="addFlat_entry"
+          className="newFlat"
           value={detail.flat_type}
           onChange={handleChange}
         >
@@ -60,7 +65,7 @@ export default function AddFlat() {
         <input
           type="text"
           id="block"
-          className="addFlat_entry"
+          className="newFlat"
           placeholder="enter block"
           value={detail.block}
           onChange={handleChange}
@@ -69,7 +74,7 @@ export default function AddFlat() {
         <input
           type="text"
           id="flat_no"
-          className="addFlat_entry"
+          className="newFlat"
           placeholder="enter flat number"
           value={detail.flat_no}
           onChange={handleChange}
@@ -78,7 +83,7 @@ export default function AddFlat() {
         <input
           type="number"
           id="residents_count"
-          className="addFlat_entry"
+          className="newFlat"
           placeholder="enter no. of residents"
           value={detail.residents_count}
           onChange={handleChange}

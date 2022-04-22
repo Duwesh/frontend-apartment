@@ -1,29 +1,47 @@
 import "./App.css";
 import { Link, useNavigate } from "react-router-dom";
 import { AllRoutes } from "./components/AllRoutes/AllRoutes";
-import {
-  Stack,
-  Button,
-} from "@mui/material";
+import { Stack, Button } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import CabinIcon from '@mui/icons-material/Cabin';
+
 const BACKEND_URL = "https://apartment-manager-dkjaiswal77.herokuapp.com";
+// const BACKEND_URL = "https://git.heroku.com/masai-appartment";
 export { BACKEND_URL };
 
 function App() {
   const navigate = useNavigate();
 
-  let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn")) || false;
+  //Getting user login status through localstorage
+  let loginStatus = JSON.parse(localStorage.getItem("loginStatus")) || false;
 
   return (
     <>
-      <Stack spacing={5} direction="row" style={{ justifyContent: "space-around", backgroundColor: "teal", padding: "1rem" }}>
+      <Stack
+        spacing={5}
+        direction="row"
+        style={{
+          justifyContent: "space-around",
+          backgroundColor: "teal",
+          padding: "5px",
+        }}
+      >
         <Link to={"/"} style={{ textDecoration: "none" }}>
-          <Button variant="contained" color="secondary">
+          <Button
+            variant="contained"
+            color="secondary"
+            startIcon={<CabinIcon />}
+          >
             Home
           </Button>
         </Link>
         <Link to={"/addflat"} style={{ textDecoration: "none" }}>
-          <Button variant="contained" color="secondary">
+          <Button
+            variant="contained"
+            color="secondary"
+            endIcon={<AddCircleIcon />}
+          >
             Add Flat
           </Button>
         </Link>
@@ -31,9 +49,9 @@ function App() {
           <Button
             variant="contained"
             onClick={() => {
-              if (isLoggedIn) {
+              if (loginStatus) {
                 // logout
-                localStorage.removeItem("isLoggedIn");
+                localStorage.removeItem("loginStatus");
                 navigate("/login");
               } else {
                 navigate("/login");
@@ -42,7 +60,7 @@ function App() {
             color="error"
             startIcon={<SendIcon />}
           >
-            {isLoggedIn ? "Signout" : "Signin"}
+            {loginStatus ? "Signout" : "Signin"}
           </Button>
         </Link>
       </Stack>

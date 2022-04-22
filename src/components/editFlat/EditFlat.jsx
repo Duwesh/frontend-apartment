@@ -1,11 +1,13 @@
 import "./EditFlat.css";
 import { useState } from "react";
-import { Stack, Button } from "@mui/material";
+import { Button } from "@mui/material";
 import { BACKEND_URL } from "../../App";
+import { Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function EditFlat() {
   let editFlat = JSON.parse(localStorage.getItem("editFlat"));
-
+  const navigate = useNavigate();
   let editFlat_details = {
     flat_type: editFlat.flat_type,
     block: editFlat.block,
@@ -35,23 +37,27 @@ export default function EditFlat() {
         flat_no: "",
         residents_count: "",
       });
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   }
 
   return (
-    <div id="addFlat_container" style={{ marginTop: "10px" }}>
+    <div
+      id="flat_container"
+      style={{ marginTop: "10px", backgroundColor: "purple" }}
+    >
       <form
         onSubmit={(e) => {
           e.preventDefault();
           updateFlat();
         }}
       >
-        <h2>Edit flat</h2>
+        <Typography variant="h6" className="head">Flat Update</Typography>
         <select
           id="flat_type"
-          className="addFlat_entry"
+          className="newFlat"
           value={detail.flat_type}
           onChange={handleChange}
         >
@@ -63,7 +69,7 @@ export default function EditFlat() {
         <input
           type="text"
           id="block"
-          className="addFlat_entry"
+          className="newFlat"
           placeholder="Enter Your Block..."
           value={detail.block}
           onChange={handleChange}
@@ -72,7 +78,7 @@ export default function EditFlat() {
         <input
           type="text"
           id="flat_no"
-          className="addFlat_entry"
+          className="newFlat"
           placeholder="Enter Flat Number..."
           value={detail.flat_no}
           onChange={handleChange}
@@ -81,7 +87,7 @@ export default function EditFlat() {
         <input
           type="number"
           id="residents_count"
-          className="addFlat_entry"
+          className="newFlat"
           placeholder="Enter Total Residents..."
           value={detail.residents_count}
           onChange={handleChange}

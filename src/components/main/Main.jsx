@@ -4,14 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import updateFlatsAction from "../../redux/updateFlats/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import {
-  Stack,
-  Button,
-  IconButton,
-  ButtonGroup,
-  ToggleButton,
-  ToggleButtonGroup,
-} from "@mui/material";
+import { Stack, Button, ButtonGroup } from "@mui/material";
 import { BACKEND_URL } from "../../App";
 
 export default function Main() {
@@ -101,6 +94,7 @@ export default function Main() {
 
   function searchByBlock(e) {
     e.preventDefault();
+    alert("Searching...");
     setupdatedFlats(flats.filter((flat) => flat.block === search));
   }
 
@@ -134,29 +128,35 @@ export default function Main() {
           </select>
         </div>
 
+        {/* search */}
+        <form onSubmit={searchByBlock}>
+          <input
+            type="text"
+            id="search"
+            placeholder="Search By Block Name..."
+            onChange={handleChange}
+          />
+          <Button
+            variant="contained"
+            size="small"
+            color="secondary"
+            onClick={(e) => searchByBlock(e)}
+          >
+            {/* <input type="submit" value="Search" padding="1rem" /> */}
+            Submit
+          </Button>
+        </form>
+
         {/* sorting */}
         <div>
           {/* <label htmlFor="sortByFlatNo">Sort by flat no.</label> */}
-          <Typography variant="h6">Sort By Flat No.</Typography>
+          <Typography variant="h6" style={{display: "inlineBlock"}}>Sort By Flat No.</Typography>
           <select id="sortByFlatNo" onChange={sortByFlatNo}>
             <option value="none">Sort Items</option>
             <option value="asc">Asc</option>
             <option value="desc">Desc</option>
           </select>
         </div>
-
-        {/* search */}
-        <form onSubmit={searchByBlock}>
-          <input
-            type="text"
-            id="search"
-            placeholder="search by block name"
-            onChange={handleChange}
-          />
-          <Button variant="contained" size="small">
-            <input type="submit" value="Search" padding="1rem" />
-          </Button>
-        </form>
       </div>
 
       {/* Flat Items in Tablular Format  */}
