@@ -224,6 +224,7 @@ export default function Main() {
         >
           <Button
             style={{ marginRight: "5px" }}
+            size="large"
             onClick={(e) => {
               if (page.current > 1) {
                 moveToNextPage(e);
@@ -232,7 +233,9 @@ export default function Main() {
           >
             Prev
           </Button>
-          <Button onClick={moveToNextPage}>Next</Button>
+          <Button onClick={moveToNextPage} size="large">
+            Next
+          </Button>
         </ButtonGroup>
       </Stack>
     </div>
