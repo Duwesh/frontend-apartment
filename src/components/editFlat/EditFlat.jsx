@@ -30,13 +30,13 @@ export default function EditFlat() {
           "Content-Type": "application/json",
         },
       });
-      alert("Flat Data Updated Successfully!");
       setDetail({
         flat_type: "none",
-        block: "",
+        block_name: "",
         flat_no: "",
-        residents_count: "",
+        total_resident: "",
       });
+      alert("Flat Data Updated Successfully!");
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -105,10 +105,3 @@ export default function EditFlat() {
     </div>
   );
 }
-
-// {
-//     flat_type : "none",
-//     block : "",
-//     flat_no : "",
-//     residents_count : ""
-// }

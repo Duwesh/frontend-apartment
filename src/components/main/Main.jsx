@@ -50,9 +50,11 @@ export default function Main() {
   //Pagination
   function moveToNextPage(e) {
     if (e.target.id === "prevPage") {
+      alert("Prev Page");
       page.current = page.current - 1;
       getFlats(page.current);
     } else if (e.target.id === "nextPage") {
+      alert("Next Page");
       page.current = page.current + 1;
       getFlats(page.current);
     }
@@ -94,8 +96,12 @@ export default function Main() {
 
   function searchByBlock(e) {
     e.preventDefault();
+    if(search == null){
+      setupdatedFlats(...[flats]);
+    }
     alert("Searching...");
     setupdatedFlats(flats.filter((flat) => flat.block_name == search));
+    setSearch("");
   }
 
   function editFlatPage(e) {
@@ -225,6 +231,7 @@ export default function Main() {
           <Button
             style={{ marginRight: "5px" }}
             size="large"
+            id="prevPage"
             onClick={(e) => {
               if (page.current > 1) {
                 moveToNextPage(e);
@@ -233,7 +240,7 @@ export default function Main() {
           >
             Prev
           </Button>
-          <Button onClick={moveToNextPage} size="large">
+          <Button onClick={moveToNextPage} size="large" id="nextPage">
             Next
           </Button>
         </ButtonGroup>
