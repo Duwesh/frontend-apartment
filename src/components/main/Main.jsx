@@ -176,9 +176,9 @@ export default function Main() {
             return (
               <tr key={flat._id} id={flat._id}>
                 <td>{flat.flat_type}</td>
-                <td>{flat.block}</td>
+                <td>{flat.block_name}</td>
                 <td>{flat.flat_no}</td>
-                <td>{flat.residents_count}</td>
+                <td>{flat.total_resident}</td>
                 <td>
                   <Button
                     size="small"
