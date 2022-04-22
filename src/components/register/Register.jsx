@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 import { Button } from "@mui/material";
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 import { BACKEND_URL } from "../../App";
 
@@ -47,7 +47,9 @@ export default function Register() {
   }
 
   return (
-    <div>
+    <div
+      style={{ paddingTop: "10px", backgroundColor: "black", height: "600px" }}
+    >
       <form onSubmit={handleSubmit} id="formRegister">
         <Typography variant="h4">Sign Up</Typography>
         <input

@@ -58,7 +58,7 @@ function App() {
               }
             }}
             color="error"
-            startIcon={<SendIcon />}
+            endIcon={<SendIcon />}
           >
             {loginStatus ? "Signout" : "Signin"}
           </Button>

@@ -11,7 +11,7 @@ import { BACKEND_URL } from "../../App";
 import { Button } from "@mui/material";
 
 export default function Login() {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [login, setLogin] = useState({
     email: "",
@@ -36,7 +36,7 @@ export default function Login() {
       if (res_data.status) {
         alert("Sign In Successfully!");
         localStorage.setItem("isLoggedIn", JSON.stringify(true));
-        Navigate("/");
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
@@ -44,7 +44,7 @@ export default function Login() {
   }
 
   return (
-    <div style={{ marginTop: "10px" }}>
+    <div style={{ paddingTop: "10px", backgroundColor: "black", height: "600px" }}>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -88,7 +88,7 @@ export default function Login() {
         </Button>
         <Button
           onClick={(e) => {
-            Navigate("/register");
+            navigate("/register");
           }}
           className="newLogin"
           variant="contained"
