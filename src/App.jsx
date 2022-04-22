@@ -6,7 +6,6 @@ import SendIcon from "@mui/icons-material/Send";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CabinIcon from "@mui/icons-material/Cabin";
 
-// const BACKEND_URL = "https://apartment-manager-dkjaiswal77.herokuapp.com";
 const BACKEND_URL = "https://masai-flats.herokuapp.com";
 export { BACKEND_URL };
 
