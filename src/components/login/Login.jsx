@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import { BACKEND_URL } from "../../App";
 
@@ -35,16 +35,21 @@ export default function Login() {
       // console.log(res_data);
       if (res_data.status) {
         alert("Sign In Successfully!");
-        localStorage.setItem("isLoggedIn", JSON.stringify(true));
+        localStorage.setItem("loginStatus", JSON.stringify(true));
         navigate("/");
+      } else {
+        alert("Please Check Email and Password!!");
       }
     } catch (error) {
+      // alert(error.message);
       console.log(error);
     }
   }
 
   return (
-    <div style={{ paddingTop: "10px", backgroundColor: "black", height: "600px" }}>
+    <div
+      style={{ paddingTop: "10px", backgroundColor: "black", height: "700px" }}
+    >
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -55,7 +60,6 @@ export default function Login() {
         <Typography
           variant="h4"
           style={{ color: "white", textAlign: "center" }}
-          endIcon={<AccountCircleIcon />}
         >
           Sign In
         </Typography>

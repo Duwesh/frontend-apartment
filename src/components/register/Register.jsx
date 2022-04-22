@@ -34,6 +34,8 @@ export default function Register() {
       // console.log(res_data);
       if (res_data.status) {
         navigate("/login");
+      } else {
+        alert("Please Enter Correct User Details!");
       }
     } catch (error) {
       console.log(error);
@@ -48,7 +50,7 @@ export default function Register() {
 
   return (
     <div
-      style={{ paddingTop: "10px", backgroundColor: "black", height: "600px" }}
+      style={{ paddingTop: "10px", backgroundColor: "black", height: "700px" }}
     >
       <form onSubmit={handleSubmit} id="formRegister">
         <Typography variant="h4">Sign Up</Typography>
