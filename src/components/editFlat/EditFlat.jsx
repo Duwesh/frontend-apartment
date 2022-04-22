@@ -10,9 +10,9 @@ export default function EditFlat() {
   const navigate = useNavigate();
   let editFlat_details = {
     flat_type: editFlat.flat_type,
-    block: editFlat.block,
+    block: editFlat.block_name,
     flat_no: editFlat.flat_no,
-    residents_count: editFlat.residents_count,
+    residents_count: editFlat.total_resident,
   };
 
   const [detail, setDetail] = useState(editFlat_details);
