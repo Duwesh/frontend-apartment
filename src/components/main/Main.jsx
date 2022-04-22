@@ -95,7 +95,7 @@ export default function Main() {
   function searchByBlock(e) {
     e.preventDefault();
     alert("Searching...");
-    setupdatedFlats(flats.filter((flat) => flat.block === search));
+    setupdatedFlats(flats.filter((flat) => flat.block_name == search));
   }
 
   function editFlatPage(e) {
