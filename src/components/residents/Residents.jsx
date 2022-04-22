@@ -64,10 +64,13 @@ export default function Residents() {
   }
 
   return (
-    <div id="container" style={{ marginTop: "10px" }}>
+    <div
+      id="container"
+      style={{ paddingTop: "10px", backgroundColor: "black", height: "700px" }}
+    >
       {/* showing residents details */}
       <div className="showResidents">
-        <Typography variant="h6" className="head">
+        <Typography variant="h6" className="head" style={{ color: "white" }}>
           Resident Details
         </Typography>
         <table>
@@ -98,7 +101,7 @@ export default function Residents() {
         id="residentForm"
         // style={{ marginTop: "5px" }}
       >
-        <h2>Add Resident to this flat</h2>
+        <h2 style={{ color: "white" }}>Add Resident to this flat</h2>
 
         <input
           type="text"

@@ -10,8 +10,8 @@ import { BACKEND_URL } from "../../App";
 export default function Main() {
   const navigate = useNavigate();
 
-  let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn")) || false;
-  if (!isLoggedIn) {
+  let loginStatus = JSON.parse(localStorage.getItem("loginStatus")) || false;
+  if (!loginStatus) {
     navigate("/login");
   }
 
@@ -150,7 +150,9 @@ export default function Main() {
         {/* sorting */}
         <div>
           {/* <label htmlFor="sortByFlatNo">Sort by flat no.</label> */}
-          <Typography variant="h6" style={{display: "inlineBlock"}}>Sort By Flat No.</Typography>
+          <Typography variant="h6" style={{ display: "inlineBlock" }}>
+            Sort By Flat No.
+          </Typography>
           <select id="sortByFlatNo" onChange={sortByFlatNo}>
             <option value="none">Sort Items</option>
             <option value="asc">Asc</option>

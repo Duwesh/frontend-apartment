@@ -34,8 +34,8 @@ export default function Login() {
       let res_data = await res.json();
       // console.log(res_data);
       if (res_data.status) {
-        alert("Sign In Successfully!");
         localStorage.setItem("loginStatus", JSON.stringify(true));
+        alert("Sign In Successfully!");
         navigate("/");
       } else {
         alert("Please Check Email and Password!!");
@@ -48,7 +48,12 @@ export default function Login() {
 
   return (
     <div
-      style={{ paddingTop: "10px", backgroundColor: "black", height: "700px", display: "flex"}}
+      style={{
+        paddingTop: "10px",
+        backgroundColor: "black",
+        height: "700px",
+        display: "flex",
+      }}
     >
       <form
         onSubmit={(e) => {
