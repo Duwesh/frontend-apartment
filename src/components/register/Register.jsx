@@ -2,6 +2,8 @@ import "./Register.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
+import { Button } from "@mui/material";
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 
 import { BACKEND_URL } from "../../App";
 
@@ -46,7 +48,7 @@ export default function Register() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} id="register_form">
+      <form onSubmit={handleSubmit} id="formRegister">
         <Typography variant="h4">Sign Up</Typography>
         <input
           type="text"
@@ -75,7 +77,15 @@ export default function Register() {
           onChange={handleChange}
         />
 
-        <input type="submit" value="Sign Up" className="newRegister" />
+        <Button
+          variant="contained"
+          color="success"
+          className="newRegister"
+          onClick={(e) => handleSubmit(e)}
+          endIcon={<ArrowCircleRightIcon />}
+        >
+          Sign Up
+        </Button>
       </form>
     </div>
   );

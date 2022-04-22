@@ -1,4 +1,4 @@
-#register_form{
+#formRegister{
     width: 30%;
     margin: 0% auto;
     border-radius: 5px;
@@ -6,12 +6,11 @@
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
+    border: 1px solid black;
+    margin-top: 10px;
+    background-color: purple;
 }
 
 .newRegister{
     padding: 5px 10px;
-}
-
-#register_form h2{
-    text-align: center;    
 }

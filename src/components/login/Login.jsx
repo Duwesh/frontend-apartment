@@ -2,6 +2,9 @@ import "./Login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "@mui/material";
+import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 import { BACKEND_URL } from "../../App";
 
@@ -47,14 +50,20 @@ export default function Login() {
           e.preventDefault();
           loginUser();
         }}
-        id="login_form"
+        id="loginForm"
       >
-        <Typography variant="h4">Sign In</Typography>
+        <Typography
+          variant="h4"
+          style={{ color: "white", textAlign: "center" }}
+          endIcon={<AccountCircleIcon />}
+        >
+          Sign In
+        </Typography>
 
         <input
           type="email"
           id="email"
-          className="login_entry"
+          className="newLogin"
           value={login.email}
           placeholder="Enter Your Email..."
           onChange={handleChange}
@@ -63,26 +72,27 @@ export default function Login() {
         <input
           type="password"
           id="password"
-          className="login_entry"
+          className="newLogin"
           value={login.password}
           placeholder="Enter Your Password..."
           onChange={handleChange}
         />
-        <input
-          type="submit"
-          value="Log In"
-          className="login_entry"
-          onClick={() => loginUser()}
-        />
-        {/* <Button variant="contained" color="error">
+        <Button
+          variant="contained"
+          color="error"
+          className="newLogin"
+          onClick={(e) => loginUser(e)}
+          endIcon={<ArrowCircleRightIcon />}
+        >
           Sign In
-        </Button> */}
+        </Button>
         <Button
           onClick={(e) => {
             Navigate("/register");
           }}
-          className="login_entry"
+          className="newLogin"
           variant="contained"
+          startIcon={<PersonAddAltIcon />}
         >
           Create an account - Sign Up
         </Button>
