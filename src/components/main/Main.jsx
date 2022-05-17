@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import updateFlatsAction from "../../redux/updateFlats/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Stack, Button, ButtonGroup } from "@mui/material";
+import { Stack, Button, ButtonGroup, CircularProgress } from "@mui/material";
 import { BACKEND_URL } from "../../App";
 
 export default function Main() {
@@ -18,6 +18,9 @@ export default function Main() {
   const dispatch = useDispatch();
 
   let flats = useSelector((state) => state.flats.flats);
+
+  //Loading Indicator
+  const [loading, setLoading] = useState(true);
 
   console.log(flats);
 
@@ -36,6 +39,8 @@ export default function Main() {
     try {
       let res = await fetch(`${BACKEND_URL}/flats/${page}`);
       let flats = await res.json();
+      console.log("getflats called");
+      setLoading(false);
       // dispatch action
       dispatch(updateFlatsAction(flats));
     } catch (error) {
@@ -44,11 +49,13 @@ export default function Main() {
   }
 
   useEffect(() => {
+    // console.log("useeffect")
     getFlats(page.current);
   }, []);
 
   //Pagination
   function moveToNextPage(e) {
+    console.log(e.target.id);
     if (e.target.id === "prevPage") {
       alert("Prev Page");
       page.current = page.current - 1;
@@ -56,6 +63,7 @@ export default function Main() {
     } else if (e.target.id === "nextPage") {
       alert("Next Page");
       page.current = page.current + 1;
+      console.log(page.current);
       getFlats(page.current);
     }
   }
@@ -96,11 +104,20 @@ export default function Main() {
 
   function searchByBlock(e) {
     e.preventDefault();
-    if(search == null){
-      setupdatedFlats(...[flats]);
+    console.log("search term", search);
+    if (search.length == 0) {
+      alert("Please Type sometime to search!");
+      getFlats(page.current);
+      return;
     }
     alert("Searching...");
-    setupdatedFlats(flats.filter((flat) => flat.block_name == search));
+    let newFlats = flats.filter((flat) => flat.block_name.startsWith(search));
+    console.log(newFlats.length)
+    if(newFlats.length === 0){
+      alert("No Matching Flat name");
+      return;
+    }
+    setupdatedFlats(newFlats);
     setSearch("");
   }
 
@@ -146,6 +163,7 @@ export default function Main() {
             variant="contained"
             size="small"
             color="secondary"
+            maxLength={1}
             onClick={(e) => searchByBlock(e)}
           >
             {/* <input type="submit" value="Search" padding="1rem" /> */}
@@ -168,6 +186,21 @@ export default function Main() {
       </div>
 
       {/* Flat Items in Tablular Format  */}
+      <div>
+        {loading && (
+          <CircularProgress
+            color="error"
+            style={{
+              // display: "inline-block",
+              position: "absolute",
+              left: "50%",
+              top: "60%",
+              transform: "transelate(-50%, -50%)",
+              // margin: "0 auto",
+            }}
+          />
+        )}
+      </div>
       <table id="displayFlats">
         <thead>
           <tr>
