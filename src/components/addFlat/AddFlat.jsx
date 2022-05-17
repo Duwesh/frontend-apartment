@@ -7,12 +7,13 @@ import { BACKEND_URL } from "../../App";
 export default function AddFlat() {
   const [detail, setDetail] = useState({
     flat_type: "none",
-    block: "",
+    block_name: "",
     flat_no: "",
-    residents_count: "",
+    total_resident: "0",
   });
 
   function handleChange(e) {
+    console.log(detail.total_resident);
     setDetail({ ...detail, [e.target.id]: e.target.value.trim() });
   }
 
@@ -28,9 +29,9 @@ export default function AddFlat() {
       alert("New Flat Added Successfully!");
       setDetail({
         flat_type: "none",
-        block: "",
+        block_name: "",
         flat_no: "",
-        residents_count: "0",
+        total_resident: "0",
       });
     } catch (error) {
       console.log(error);
@@ -64,10 +65,10 @@ export default function AddFlat() {
 
         <input
           type="text"
-          id="block"
+          id="block_name"
           className="newFlat"
-          placeholder="enter block"
-          value={detail.block}
+          placeholder="enter block name"
+          value={detail.block_name}
           onChange={handleChange}
         />
 
@@ -82,13 +83,13 @@ export default function AddFlat() {
 
         <input
           type="number"
-          id="residents_count"
+          id="total_resident"
           className="newFlat"
           placeholder="enter no. of residents"
-          value={detail.residents_count}
+          value={detail.total_resident}
           onChange={handleChange}
         />
-        <Button variant="contained" onClick={() => saveFlat()}>
+        <Button variant="contained" onClick={(e) => saveFlat(e)}>
           Add New Flat
         </Button>
       </form>

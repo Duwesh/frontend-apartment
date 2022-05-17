@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function EditFlat() {
   let editFlat = JSON.parse(localStorage.getItem("editFlat"));
+  console.log(editFlat);
   const navigate = useNavigate();
   let editFlat_details = {
     flat_type: editFlat.flat_type,
@@ -18,7 +19,8 @@ export default function EditFlat() {
   const [detail, setDetail] = useState(editFlat_details);
 
   function handleChange(e) {
-    setDetail({ ...detail, [e.target.id]: e.target.value.trim() });
+    // console.log(e.target.value);
+    setDetail({ ...detail, [e.target.id]: e.target.value });
   }
 
   async function updateFlat() {
@@ -97,7 +99,7 @@ export default function EditFlat() {
         <Button
           variant="contained"
           color="primary"
-          onClick={() => updateFlat()}
+          onClick={(e) => updateFlat(e)}
         >
           Flat Update
         </Button>
