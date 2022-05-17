@@ -21,12 +21,14 @@ export default function Main() {
 
   //Loading Indicator
   const [loading, setLoading] = useState(true);
-
-  console.log(flats);
-
-  const page = useRef(1);
-
   const [updatedFlats, setupdatedFlats] = useState(null);
+  const page = useRef(1);
+  
+  console.log("flats",flats);
+
+  
+
+  
 
   let displayFlats;
   if (updatedFlats === null) {

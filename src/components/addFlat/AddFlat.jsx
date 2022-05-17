@@ -9,11 +9,11 @@ export default function AddFlat() {
     flat_type: "none",
     block_name: "",
     flat_no: "",
-    total_resident: "0",
+    total_resident: 0,
   });
 
   function handleChange(e) {
-    console.log(detail.total_resident);
+    // console.log(detail.total_resident);
     setDetail({ ...detail, [e.target.id]: e.target.value.trim() });
   }
 
@@ -31,7 +31,7 @@ export default function AddFlat() {
         flat_type: "none",
         block_name: "",
         flat_no: "",
-        total_resident: "0",
+        total_resident: 0,
       });
     } catch (error) {
       console.log(error);

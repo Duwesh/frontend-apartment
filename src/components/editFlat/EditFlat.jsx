@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function EditFlat() {
   let editFlat = JSON.parse(localStorage.getItem("editFlat"));
-  console.log(editFlat);
+  
   const navigate = useNavigate();
   let editFlat_details = {
     flat_type: editFlat.flat_type,
@@ -15,12 +15,12 @@ export default function EditFlat() {
     flat_no: editFlat.flat_no,
     total_resident: editFlat.total_resident,
   };
-
+  console.log(typeof editFlat_details.total_resident);
   const [detail, setDetail] = useState(editFlat_details);
 
   function handleChange(e) {
     // console.log(e.target.value);
-    setDetail({ ...detail, [e.target.id]: e.target.value });
+    setDetail({ ...detail, [e.target.id]: e.target.value.trim() });
   }
 
   async function updateFlat() {
@@ -36,7 +36,7 @@ export default function EditFlat() {
         flat_type: "none",
         block_name: "",
         flat_no: "",
-        total_resident: "",
+        total_resident: 0,
       });
       alert("Flat Data Updated Successfully!");
       navigate("/");
@@ -89,7 +89,7 @@ export default function EditFlat() {
         />
 
         <input
-          type="number"
+          type="text"
           id="residents_count"
           className="newFlat"
           placeholder="Enter Total Residents..."
