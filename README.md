@@ -12,7 +12,7 @@
 
 # Live Demo:
 
-https://apartment-frontend.vercel.app/
+https://apartment-frontend-duwesh.vercel.app/
 
 ---
 
