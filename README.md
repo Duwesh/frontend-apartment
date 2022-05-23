@@ -18,7 +18,7 @@ https://apartment-frontend-duwesh.vercel.app/
 
 ### About this project: :raised_hands:
 
-> It is a solo project executed in 1 day as a side project of mine in Masai School. It has features like CRUD operations and sorting, filtering, pagination, user authentication, and many more. 
+> It is a solo project executed in 4 day as a side project of mine in Masai School. It has features like CRUD operations and sorting, filtering, pagination, user authentication, and many more. 
 
 ---
 
